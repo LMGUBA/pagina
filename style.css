@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;/*permite que el ancho de los elementos sea el ancho total de la pantalla*/
+  }
+  
+  .flex-container {
+    display: flex;
+    flex-direction: row;/*permite que los elementos se alineen en una fila*/
+    font-size: 30px;
+    text-align: center;
+  }
+  
+  .flex-item-left {
+    background-color: #6b9cca;
+    padding: 10px;
+    flex: 50%;
+  }
+  
+  .flex-item-right {
+    background-color: dodgerblue;
+    padding: 10px;
+    flex: 50%;
+  }
+  
+  /* Responsive layout - makes a one column-layout instead of two-column layout */
+  @media (max-width: 800px) {
+    .flex-container {
+      flex-direction: column;
+    }
+  }

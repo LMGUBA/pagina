@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+  <script defer src="https://pyscript.net/latest/pyscript.js"> print('desde pyscript')</script>
+</head>
+<body class="dark:bg-slate-800">
+    <header>
+        
+    </header>
+    
+        <br>
+    <main >  
+        <div class="container mx-auto px-4">
+            <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+                <div class="md:flex">
+                    <div class="md:shrink-0">
+                        <img class="h-48 w-full object-cover md:h-full md:w-48" src="https://www.datasec-soft.com/sites/default/files/styles/novedades-portada/public/field/image/NETKIA-CIBERSEGURIDAD-EMPRESAS.jpg?itok=DkHXTvR4" alt="Modern building architecture">
+                    </div>
+                    <div class="p-8">
+                        <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">genera una contraseña segura</div>
+                        <a href="#" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">Este generador fue creado en python y mostrado con pyscript</a>
+                        <p class="mt-2 text-slate-500">Las contraseñas para que sean seguras deben contener diversidad de caracteres para no ser facilmente vulnerados</p>
+                        <br>
+                        <hr>
+                        <h3>contraseña sugerida o presiona el siguiente boton :</h3>
+                        <br>
+                        <div>
+                            <button id="refresh" class="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-1 py-3 text-base font-medium text-white hover:bg-indigo-700 md:py-4 md:px-10 md:text-lg">generar</button>
+                        </div>
+                        <br>
+                        <p>
+                            <py-script>
+
+                                import random
+                            
+                                def generar_contrasena():
+                                    mayusculas=['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'Ñ', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'X', 'Y', 'Z']
+                                    minusculas=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'x', 'y', 'z']
+                                    simbolos=['*', '+', '-', '/', '@', '_', '?', '!', '[', '{', '(', ')', '}', ']', ',', ';', '.', '>', '<', '~', '°', '^', '&', '$', '#', '"']
+                                    numeros=['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
+                            
+                                    caracteres=mayusculas+minusculas+simbolos+numeros
+                            
+                                    contrasena=[]
+                            
+                                    for i in range(15):
+                                        caracter_random=random.choice(caracteres)#choise es para elegir un elemento de una lista
+                                        contrasena.append(caracter_random)
+                                        
+                                    contrasena="".join(contrasena)#join es para unir los elementos de una lista
+                                    return contrasena
+                            
+                            
+                                def run():
+                                    contrasena=generar_contrasena()
+                                    print('tu nueva contaraseña es: ' + contrasena)
+                            
+                                if __name__ == '__main__':
+                                    run()
+                            </py-script>
+                        </p>
+                    </div>
+                </div>
+            </div>
+          </div>
+          
+
+          
+          
+        
+       
+
+    </main>
+    <article>
+       
+    </article>
+    <script src="main.js" ></script>
+    
+</body>
+</html>
